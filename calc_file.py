@@ -1,3 +1,5 @@
+t = int(0)
+
 with open('step_2.txt') as f:
     for line in f:
         line = f.readline()
@@ -21,14 +23,17 @@ with open('step_2.txt') as f:
            return num1 / num2
 
         if sign == '+':
-            print(add(num1, num2))
+            add(num1,num2)
+            t = t + add(num1,num2)
         if sign == '-':
-            print(subtract(num1, num2))
+            subtract(num1,num2)
+            t = t + subtract(num1,num2)
         if sign == '/':
-            print(divide(num1, num2))
-        if sign == '*':
-            print(multiply(num1, num2))
+            divide(num1,num2)
+            t = t + divide(num1,num2)
+        if sign == 'x':
+            multiply(num1,num2)
+            t = t + multiply(num1,num2)
 
-output = open('C:\\Users\\mcadec\\Desktop\\DevOps\\Scripts\\step_2_exp.txt')
-output.write
-
+        with open('step_2_exp.txt','w') as o:
+            o.write(str(t))
